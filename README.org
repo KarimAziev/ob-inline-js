@@ -1,0 +1,47 @@
+#+OPTIONS: ^:nil tags:nil num:nil
+
+* About
+
+A small helper for inline JS evaluation in org-mode.
+
+* Table of Contents                                       :TOC_2_gh:QUOTE:
+#+BEGIN_QUOTE
+- [[#about][About]]
+- [[#requirements][Requirements]]
+- [[#installation][Installation]]
+  - [[#with-use-package-and-straightel][With use-package and straight.el]]
+  - [[#manual-installation][Manual installation]]
+#+END_QUOTE
+
+* Requirements
+
+| Name  | Version |
+|-------+---------|
+| Emacs |    24.1 |
+
+
+* Installation
+
+** With use-package and straight.el
+#+begin_src elisp :eval no
+(use-package ob-inline-js
+  :straight (ob-inline-js
+             :repo "KarimAziev/ob-inline-js"
+             :type git
+             :host github))
+#+end_src
+
+** Manual installation
+
+Download the source code and put it wherever you like, e.g. into =~/.emacs.d/ob-inline-js/=
+
+#+begin_src shell :eval no
+git clone https://github.com/KarimAziev/ob-inline-js.git ~/.emacs.d/ob-inline-js/
+#+end_src
+
+Add the downloaded directory to the load path:
+
+#+begin_src elisp :eval no
+(add-to-list 'load-path "~/.emacs.d/ob-inline-js/")
+(require 'ob-inline-js)
+#+end_src
